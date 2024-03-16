@@ -1,0 +1,26 @@
+{
+  "jsc": {
+    "parser": {
+      "syntax": "typescript",
+      "tsx": true,
+      "decorators": true,
+      "dynamicImport": true
+    },
+
+    "baseUrl": ".",
+    "paths": { "@types/*": ["types/*"] },
+    "target": "esnext",
+    "loose": false // If true, swc generates more efficient code. But their are some assumptions made for it. https://swc.rs/docs/configuration/compilation#jscloose
+  },
+  "sourceMaps": true,
+  "inlineSourcesContent": true,
+  "minify": false,
+  "exclude": ["node_modules", "dist", "types"],
+  "module": {
+    "type": "es6",
+    "strict": true,
+    "strictMode": true,
+    "lazy": false,
+    "noInterop": false
+  }
+}

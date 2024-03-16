@@ -1,0 +1,90 @@
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "airbnb-base",
+    "plugin:prettier/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "prettier", "import"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "tabWidth": 2,
+        "printWidth": 180,
+        "singleQuote": true,
+        "trailingComma": "none",
+        "arrowParens": "avoid",
+        "semi": true,
+        "proseWrap": "never"
+      }
+    ],
+    "import/extensions": "off",
+    "import/no-unresolved": "error",
+    "no-console": "off",
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "never",
+        "groups": [
+          ["builtin", "external"],
+          ["internal", "parent", "sibling", "index"]
+        ]
+      }
+    ],
+    "eqeqeq": "off",
+    // for enum already declared false positive
+    "no-undef": "off",
+    "no-shadow": "warn",
+    "no-unused-vars": "off",
+    "no-explicit-any": "off",
+    "no-underscore-dangle": "off",
+    "consistent-return": "off",
+    "camelcase": "off",
+    "no-param-reassign": "off",
+    "import/no-cycle": "off",
+    "class-methods-use-this": "off",
+    "@typescript-eslint/no-undef": ["off"],
+    "@typescript-eslint/no-shadow": ["warn"],
+    "@typescript-eslint/no-unused-vars": ["off"],
+    "@typescript-eslint/no-explicit-any": ["off"],
+    "@typescript-eslint/no-unnecessary-type-constraint": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/quotes": [
+      "error",
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+
+    "import/prefer-default-export": "off",
+    "import/no-default-export": "off"
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": "./tsconfig.json"
+      }
+    }
+  },
+  "globals": {
+    // "emitter": "readonly",
+  }
+}
